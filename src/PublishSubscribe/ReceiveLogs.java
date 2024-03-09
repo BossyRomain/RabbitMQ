@@ -21,15 +21,17 @@ public class ReceiveLogs {
 
         channel.exchangeDeclare(EXCHANGE_NAME2, "fanout");
         String queueName2 = channel.queueDeclare().getQueue();
-        channel.queueBind(queueName2, EXCHANGE_NAME2, "");
+        channel.queueBind(queueName, EXCHANGE_NAME2, "");
 
         System.out.println(" [*] Waiting for messages. To exit press CTRL+C");
 
         DeliverCallback deliverCallback = (consumerTag, delivery) -> {
+            System.out.println("Message from : " + delivery.getEnvelope().getExchange());
             String message = new String(delivery.getBody(), "UTF-8");
             System.out.println(" [x] Received on logs '" + message + "'");
         };
         DeliverCallback deliverCallback2 = (consumerTag, delivery) -> {
+            System.out.println(delivery.getEnvelope().getRoutingKey());
             String message = new String(delivery.getBody(), "UTF-8");
             System.out.println(" [x] Received on numbers '" + message + "'");
         };
