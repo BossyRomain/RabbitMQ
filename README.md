@@ -22,5 +22,5 @@ Using this command
 
 # Credits
 
-This project was developped by Jules SEBAN and Romain BOSSY.
+This project was developped by Jules SEBAN and Romain BOSSY, with the use of the RabbitMQ Tutorial given during the lab.
 
