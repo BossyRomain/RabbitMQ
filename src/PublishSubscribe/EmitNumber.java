@@ -18,7 +18,7 @@ public class EmitNumber {
             channel.exchangeDeclare(EXCHANGE_NAME, "fanout");
 
             Random random = new Random();
-            String message = Integer.toString(random.nextInt(1, 100));
+            String message = Integer.toString(random.nextInt(100));
 
             channel.basicPublish(EXCHANGE_NAME, "", null, message.getBytes("UTF-8"));
             System.out.println(" [x] Sent '" + message + "'");
