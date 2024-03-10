@@ -1,6 +1,5 @@
 # Compile the project
 
-
     javac -cp "$(ls -d "$PWD"/libs/* | tr '\n' ':')" $(find src | grep ".java") -d bin/
 
     
@@ -16,6 +15,7 @@ You can run any of the following programs, they take no argument unless specifie
 - `PublishSubscribe.ReceiveLogs` is the receiver for both topics in the Publish-Subscribe implementation. Specifies the topic from which it receives, whether it is "logs" or "numbers".
 - `PingPong.PingPong` is the PingPong implementation we have studied during the lecture, using MOM communication.
 
+Using this command
 
     java -cp "$(ls -d "$PWD"/libs/* | tr '\n' ':')bin" PROGRAM
 
