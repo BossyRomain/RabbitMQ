@@ -13,7 +13,8 @@ public class NewTask {
         factory.setHost("localhost");
         try (Connection connection = factory.newConnection();
              Channel channel = connection.createChannel()) {
-            channel.queueDeclare(QUEUE_NAME, false, false, false, null);
+            boolean durable = true;
+            channel.queueDeclare(QUEUE_NAME, durable, false, false, null);
 
             String message = String.join(".", argv);
             channel.basicPublish("", "task_queue",
