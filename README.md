@@ -1,6 +1,6 @@
-# Compile the project
+# Build the project
 
-    javac -cp "$(ls -d "$PWD"/libs/* | tr '\n' ':')" $(find src | grep ".java") -d bin/
+    >>> javac -cp "$(ls -d "$PWD"/libs/* | tr '\n' ':')" $(find src | grep ".java") -d bin/
 
     
 # Run the project
@@ -17,6 +17,10 @@ You can run any of the following programs, they take no argument unless specifie
 
 Using this command
 
-    java -cp "$(ls -d "$PWD"/libs/* | tr '\n' ':')bin" PROGRAM
+    >>> java -cp "$(ls -d "$PWD"/libs/* | tr '\n' ':')bin" PROGRAM
 
+
+# Credits
+
+This project was developped by Jules SEBAN and Romain BOSSY.
 
