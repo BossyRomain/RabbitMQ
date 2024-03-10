@@ -57,7 +57,7 @@ public class PingPong implements DeliverCallback {
             System.out.println("Receive a START");
         }
         // Lors de la réception d'un INIT_CONN(ID)
-        else if (exchange.equals(INIT_CONN)) {
+        else if (exchange.equals(INIT_CONN) && this.state != STATES.STARTED) {
             final long OTHER_ID = Long.parseLong(new String(delivery.getBody(), StandardCharsets.UTF_8));
             System.out.println("ID:" + OTHER_ID);
 
